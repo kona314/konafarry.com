@@ -1,0 +1,21 @@
+{{ define "title" }}{{ .Title }} – {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<div class="row justify-content-center">
+    <div class="col-12 pb-4">
+        <h1>{{ .Title }}</h1>
+    </div>
+    {{ range .Data.Pages.ByWeight }}
+    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body h-100">
+                <h5 class="card-title w-100"><a href="{{.RelPermalink}}">{{.Title}}</a></h5>
+                <p class="card-text">{{.Summary}}</p>
+                {{ if .Params.projectUrl }}
+                <a href="{{.Params.projectUrl}}">Visit</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

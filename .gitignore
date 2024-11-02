@@ -1,1 +1,5 @@
 .DS_Store
+/public
+/.vscode
+/content/posts/zzz-test*.md
+.hugo_build.lock

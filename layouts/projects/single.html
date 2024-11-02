@@ -1,0 +1,27 @@
+{{ define "title" }}{{ .Title }} – {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+        <h1>{{ .Title }}</h1>
+        <div class="project-links">
+            {{ if .Params.projectUrl }}
+            <span><a href="{{ .Params.projectUrl }}">Visit</a></span>
+            {{ end }}
+            {{ if .Params.sourceUrl }}
+            <span><a href="{{ .Params.sourceUrl }}">Source Code</a></span>
+            {{ end }}
+        </div>
+        {{ $statuses := dict "active" "success" "complete" "info" "one-off" "info" "end of life" "warning" "no longer available" "danger" }}
+        {{ if and .Params.status (index $statuses .Params.status) }}
+        <div>
+            <b>Status: <span class="text-{{index $statuses .Params.status}}">{{.Params.status}}</span></b>
+        </div>
+        {{ end }}
+        <div class="mt-4">
+            {{ .Content }}
+        </div>
+    </div>
+</div>
+{{ partial "breadcrumb.html" . }}
+{{ end }}

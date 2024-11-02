@@ -1,0 +1,63 @@
+.bold {
+    font-weight: bold;
+}
+
+h1 {
+    font-weight: bold !important;
+}
+
+.bc ol {
+    padding-left: 0;
+}
+
+.bc li {
+    display: inline;
+}
+
+.bc li:not(:last-child)::after {
+    content: "→";
+}
+
+.project-links span:not(:last-child)::after {
+    content: " | ";
+}
+
+.text-secondary a {
+    color: inherit;
+}
+
+.text-secondary a:hover {
+    filter: brightness(80%);
+}
+
+.footnotes {
+    font-size: 85%;
+    opacity: 80%;
+}
+
+/* Need the !important to overwrite Bootstrap */
+body {
+    background: radial-gradient(#f4e5ff, #f4f9ff) !important;
+    background-size: 100vw 100vh !important;
+    background-attachment: fixed !important;
+    background-color: #c471ff !important;
+}
+
+.main-navbar {
+    backdrop-filter: blur(15px);
+    background: rgba(240, 226, 250, 0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: radial-gradient(#29202c, #23272e) !important;
+        background-size: 100vw 100vh !important;
+        background-attachment: fixed !important;
+        background-color: #522f6b !important;
+    }
+
+    .main-navbar {
+        backdrop-filter: blur(15px);
+        background: rgba(86, 75, 93, 0.7);
+    }
+}

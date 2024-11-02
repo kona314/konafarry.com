@@ -1,0 +1,32 @@
+{{ define "title" }}{{ .Title }}{{ end }}
+
+{{ define "main" }}
+<div class="row pt-xl-5">
+    <div class="col-12 text-center mb-4">
+        <div>
+            <img src="me-circle.png" height="170px" width="170px">
+        </div>
+        <div class="socials-list bold pt-1">
+            {{ range .Page.Params.socials  }}
+            <span class="socials-item"><a {{if in .name "Mastodon"}}rel='me'{{else}}{{end}} href="{{.link}}">{{ .name }}</a></span>
+            {{ end }}
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 text-md-center ">
+        {{ .Content }}
+        {{/*  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#bioCollapse" aria-expanded="false" aria-controls="collapseExample">
+            About Me
+        </button>
+        <div id="bioCollapse" class="collapse pt-3">
+            {{ .Content }}
+        </div>  */}}
+    </div>
+</div>
+<style>
+    .socials-list .socials-item:not(:last-child)::after {
+        content: " | ";
+    }
+</style>
+{{ end }}
