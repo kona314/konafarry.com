@@ -1,6 +1,6 @@
 ---
 title: Test Post, Please Ignore
-date: 2024-11-02
+date: 2024-11-02T12:00:00-0700
 summary: I guess I have a blog now?
 ---
 
