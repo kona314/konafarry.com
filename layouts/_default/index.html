@@ -6,9 +6,9 @@
         <div>
             <img src="me-circle.png" height="170px" width="170px">
         </div>
-        <div class="socials-list bold pt-1">
+        <div class="findme-list bold pt-1">
             {{ range .Page.Params.socials  }}
-            <span class="socials-item"><a {{if in .name "Mastodon"}}rel='me'{{else}}{{end}} href="{{.link}}">{{ .name }}</a></span>
+            <span class="findme-item"><a {{if in .name "Mastodon"}}rel='me'{{else}}{{end}} href="{{.link}}">{{ .name }}</a></span>
             {{ end }}
         </div>
     </div>
@@ -25,7 +25,7 @@
     </div>
 </div>
 <style>
-    .socials-list .socials-item:not(:last-child)::after {
+    .findme-list .findme-item:not(:last-child)::after {
         content: " | ";
     }
 </style>
