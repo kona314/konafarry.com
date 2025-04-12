@@ -6,7 +6,7 @@ socials:
     - name: Résumé
       link: /kona-farry-resume.pdf
     - name: Bluesky
-      link: https://bsky.app/profile/konafarry.com
+      link: https://bsky.app/profile/kona.moi
     - name: Mastodon 
       link: https://social.ridetrans.it/@kona
     - name: Email 
